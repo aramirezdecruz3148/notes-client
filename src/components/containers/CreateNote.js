@@ -24,7 +24,7 @@ export default class CreateNote extends Component {
   }
 
   render() {
-    const { title, note, handleSubmit } = this.state;
+    const { title, note } = this.state;
     return (
       <>
         <NoteForm 
@@ -32,7 +32,7 @@ export default class CreateNote extends Component {
           handleNoteChange={this.handleNoteChange} 
           title={title}
           note={note}
-          onSubmit={handleSubmit}
+          onSubmit={this.handleSubmit}
         />
       </>
     );

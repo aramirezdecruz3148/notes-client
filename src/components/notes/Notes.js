@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Note from './Note';
 
 function Notes({ notesArray }) {
-  const noteList = notesArray.map(({ id, title, note }) => (
-    <li key={id}>
-      <Notes 
+  const noteList = notesArray.map(({ _id, title, note }) => (
+    <li key={_id}>
+      <Note 
         title={title}
         note={note}
       />
@@ -20,7 +21,7 @@ function Notes({ notesArray }) {
 
 Notes.propTypes = {
   notesArray: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     note: PropTypes.string.isRequired
   })).isRequired
