@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NoteForm.css';
 
-function NoteForm({ onSubmit, 
-  onClick, 
+function NoteForm({ 
+  onSubmit,  
   handleTitleChange,
   handleNoteChange,
   title,
   note
 }) {
   return (
-    <form className={styles.form} onSubmit={onSubmit}>
+    <form 
+      className={styles.form} 
+      onSubmit={onSubmit}>
       <input 
         className={styles.inputs}
         onChange={handleTitleChange} 
@@ -26,14 +28,13 @@ function NoteForm({ onSubmit,
         type='text' 
         placeholder='note text'
       />
-      <button className={styles.inputs} onClick={onClick} >Make Note!</button>
+      <button className={styles.inputs}>Make Note!</button>
     </form>
   );
 }
 
 NoteForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  onClick: PropTypes.func.isRequired,
   handleTitleChange: PropTypes.func.isRequired,
   handleNoteChange: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
